@@ -1,4 +1,6 @@
-let animeList = [
+const savedAnime = localStorage.getItem("novaAnimeList");
+
+let animeList = savedAnime ? JSON.parse(savedAnime) : [
     {
         title: "One Piece",
         episode: 915,
@@ -9,6 +11,7 @@ let animeList = [
         episode: 500,
         status: "Completed"
     }
+];
 ];
 
 const animeContainer = document.getElementById("anime-list");
