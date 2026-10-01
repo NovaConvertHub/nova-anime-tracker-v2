@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Anime Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Nova Anime Tracker</h1>
+        <p>Track your anime journey.</p>
+    </header>
+
+    <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search anime...">
+        <button id="clear-search">Clear Search</button>
+    </div>
+
+    <div class="add-anime">
+        <input type="text" id="anime-name" placeholder="Anime name">
+        <input type="number" id="anime-episode" placeholder="Episode">
+
+        <select id="anime-status">
+            <option value="Watching">Watching</option>
+            <option value="Completed">Completed</option>
+            <option value="Plan to Watch">Plan to Watch</option>
+            <option value="Dropped">Dropped</option>
+        </select>
+
+        <button id="add-button">Add Anime</button>
+    </div>
+
+    <div id="anime-list"></div>
+
+    <footer class="footer">
+        <p>Nova Anime Tracker</p>
+        <p>Built by Nova</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
