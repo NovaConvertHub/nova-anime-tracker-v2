@@ -15,20 +15,13 @@ const savedAnime = localStorage.getItem("novaAnimeList");
 
 if (savedAnime) {
     try {
-        animeList = JSON.parse(savedAnime);
+        const parsedAnime = JSON.parse(savedAnime);
+
+        if (Array.isArray(parsedAnime) && parsedAnime.length > 0) {
+            animeList = parsedAnime;
+        }
     } catch (error) {
-        animeList = [
-            {
-                title: "One Piece",
-                episode: 915,
-                status: "Watching"
-            },
-            {
-                title: "Naruto",
-                episode: 500,
-                status: "Completed"
-            }
-        ];
+        console.log("Could not load saved anime.");
     }
 }
 
