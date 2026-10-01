@@ -1,6 +1,4 @@
-const savedAnime = localStorage.getItem("novaAnimeList");
-
-let animeList = savedAnime ? JSON.parse(savedAnime) : [
+let animeList = [
     {
         title: "One Piece",
         episode: 915,
@@ -12,7 +10,27 @@ let animeList = savedAnime ? JSON.parse(savedAnime) : [
         status: "Completed"
     }
 ];
-];
+
+const savedAnime = localStorage.getItem("novaAnimeList");
+
+if (savedAnime) {
+    try {
+        animeList = JSON.parse(savedAnime);
+    } catch (error) {
+        animeList = [
+            {
+                title: "One Piece",
+                episode: 915,
+                status: "Watching"
+            },
+            {
+                title: "Naruto",
+                episode: 500,
+                status: "Completed"
+            }
+        ];
+    }
+}
 
 const animeContainer = document.getElementById("anime-list");
 const searchInput = document.getElementById("search-input");
